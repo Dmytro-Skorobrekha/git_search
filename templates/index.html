@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if name or repos %}
+
+    <p>{{ name or 'No name' }}</p>
+    {% for i in repos %}
+    - {{ i['node']['name'] }} <br>
+    {% endfor %}
+    <form action="">
+        <input type="submit" value="Back">
+    </form>
+{% else %}
+    <form action="" method = "POST">
+        GitHub login:
+        <input type="text" name="GitHub_login">
+        <input type="submit" value="Submit">
+    </form>
+{% endif %}
+</body>
+</html>
